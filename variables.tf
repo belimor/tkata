@@ -5,3 +5,11 @@ variable aws_region {
 variable aws_profile {
   default = "LA"
 }
+
+variable secret_key {
+  default = "123"
+}
+
+variable access_key {
+  default = "456"
+}
