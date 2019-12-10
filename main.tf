@@ -9,7 +9,7 @@ terraform {
     organization = "FLYHT"
 
     workspaces {
-      name = "test"
+      name = "tkata"
     }
   }
 }
