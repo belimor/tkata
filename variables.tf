@@ -6,10 +6,10 @@ variable aws_profile {
   default = "LA"
 }
 
-variable secret_key {
+variable my-secret-key {
   default = "123"
 }
 
-variable access_key {
+variable my-access-key {
   default = "456"
 }
