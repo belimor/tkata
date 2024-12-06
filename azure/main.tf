@@ -27,7 +27,10 @@ resource "azurerm_public_ip" "example" {
   name                = "example-public-ip"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
+  sku                 = "Standard"
+  #allocation_method   = "Dynamic"
+  #sku                 = "Basic"
 }
 
 resource "azurerm_network_interface" "example" {
@@ -48,7 +51,7 @@ resource "azurerm_virtual_machine" "example" {
   location              = azurerm_resource_group.example.location
   resource_group_name   = azurerm_resource_group.example.name
   network_interface_ids = [azurerm_network_interface.example.id]
-  vm_size               = "Standard_B1ls2"
+  vm_size               = "Standard_B1s"
 
   storage_os_disk {
     name              = "example-os-disk"
@@ -74,7 +77,7 @@ resource "azurerm_virtual_machine" "example" {
 
     ssh_keys {
       path     = "/home/azureuser/.ssh/authorized_keys"
-      key_data = "~/.ssh/id_ed25519.pub"
+      key_data = file("~/.ssh/id_ed25519.pub") # Read SSH key from file
     }
   }
 }
