@@ -63,7 +63,7 @@ resource "azurerm_virtual_machine" "example" {
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "24.04-LTS"
+    sku       = "18_04-lts-gen2"
     version   = "latest"
   }
 
@@ -76,7 +76,7 @@ resource "azurerm_virtual_machine" "example" {
     disable_password_authentication = true
 
     ssh_keys {
-      path     = "/home/azureuser/.ssh/authorized_keys"
+      path     = "/home/azure/.ssh/authorized_keys"
       key_data = file("~/.ssh/id_ed25519.pub") # Read SSH key from file
     }
   }
