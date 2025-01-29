@@ -1,7 +1,9 @@
 provider "azurerm" {
   features {}
-  subscription_id = ""
+  # subscription_id = ""
   # Use az account list to check azure subscription id
+  # or
+  # export ARM_SUBSCRIPTION_ID="your-subscription-id"
 }
 
 resource "azurerm_resource_group" "example" {
