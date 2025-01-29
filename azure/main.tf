@@ -40,6 +40,12 @@ resource "azurerm_network_interface" "example" {
   }
 }
 
+# Associate the NSG with the subnet
+resource "azurerm_subnet_network_security_group_association" "example" {
+  subnet_id                 = azurerm_subnet.example.id
+  network_security_group_id = azurerm_network_security_group.example.id
+}
+
 # Create a Network Security Group (NSG) to allow SSH traffic
 resource "azurerm_network_security_group" "example" {
   name                = "example-nsg"
