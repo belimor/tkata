@@ -1,0 +1,15 @@
+# Some usefull terraform commands
+
+terraform version
+
+terraform init
+terraform plan
+terraform apply
+tarraform show
+terraform destroy
+
+# Workspaces
+terraform workspace show
+terraform workspace list
+terraform workspace new dev
+terraform workspace select dev
