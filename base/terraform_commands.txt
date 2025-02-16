@@ -1,0 +1,39 @@
+# Some usefull terraform commands
+
+terraform version
+
+terraform init
+terraform plan
+terraform apply
+tarraform show
+terraform destroy
+
+# Workspaces
+terraform workspace show
+terraform workspace list
+terraform workspace new dev
+terraform workspace select dev
+
+# ENV variables
+export TF_VAR_instance_type = "t2.micro"
+terraform apply
+
+# Variable files aoutoladed:
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+terraform apply -var-file variables.tfvars
+terraform apply -var "type=t2.small"
+
+# Vars priority:
+# - default
+# - ENV
+# - terraform.tfvars
+# - *.auto.tfvars (alphabetical order)
+# - command line
+
+
+
+
