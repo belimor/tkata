@@ -8,6 +8,26 @@ terraform apply
 tarraform show
 terraform destroy
 
+terraform providers
+terraform output
+terraform output <name>
+terraform refresh
+
+terraform graph
+
+terraform state list <name>
+terraform show <name>
+
+terraform state mv SOURCE DEST # you can rename resource with mv
+terraform state pull # download state file
+terraform state rm <ADDRESS>
+terraform state push <local state file>
+
+terraform taint <resource>
+terraform untaint <resource>
+
+terraform import
+
 # Workspaces
 terraform workspace show
 terraform workspace list
